@@ -13,23 +13,17 @@ module.exports = {
      *
     */
 
-    await queryInterface.bulkInsert('Tasks', [{
-      description: 'Batata',
-      done: false,
+    await queryInterface.bulkInsert('Tasklist', [{
+      id_lugar: '1',
+      nome_lista: 'Jardim Botânico',
+      visitou_lista: false,
+      comentarios_lista:'Gostaria de conhecer o Jardim Botanico',
+      valor_lista:100,
       createdAt: new Date(),
       updatedAt: new Date()
-    }, {
-      description: 'Cenoura',
-      done: false,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      description: 'Maçãs',
-      done: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }])
-  },
+  
+    }]);
+    },
 
   down: async (queryInterface, Sequelize) => {
     /**

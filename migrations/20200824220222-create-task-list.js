@@ -1,18 +1,27 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Tasks', {
+    await queryInterface.createTable('Tasklist', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      description: {
+      id_lugar: {
+        type: Sequelize.INTEGER
+      },
+      nome_lista: {
         type: Sequelize.STRING
       },
-      done: {
+      visitou_lista: {
         type: Sequelize.BOOLEAN
+      },
+      comentarios_lista: {
+        type: Sequelize.STRING
+      },
+      valor_lista: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -25,6 +34,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Tasks');
+    await queryInterface.dropTable('task-list');
   }
 };

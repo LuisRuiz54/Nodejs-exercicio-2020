@@ -13,12 +13,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  Task.init({
-    description: DataTypes.STRING,
-    done: DataTypes.BOOLEAN
+  Tasklist.init({
+    id_lugar: DataTypes.INTEGER,
+    nome_lista: DataTypes.STRING,
+    visitou_lista: DataTypes.BOOLEAN,
+    comentarios_lista: DataTypes.STRING,
+    valor_lista: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Task'
-  })
-  return Task
+    modelName: 'Tasklist',
+  });
+  return Tasklist;
 };
